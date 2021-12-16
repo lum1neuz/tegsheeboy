@@ -1,0 +1,228 @@
+@font-face {
+  font-family: ProgramTime;
+  src: url(../fonts/BloombergLogotypes-Large.otf);
+}
+
+@-webkit-keyframes slidein-from-left { from { opacity: 0;
+    -webkit-transform: translateX(-100px);
+    -khtml-transform: translateX(-100px);
+    transform: translateX(-100px); }
+  to { opacity: 1.0;
+    -webkit-transform: translateX(0);
+    -khtml-transform: translateX(0);
+    transform: translateX(0); } }
+
+@keyframes slidein-from-left { from { opacity: 0;
+    -webkit-transform: translateX(-100px);
+    -khtml-transform: translateX(-100px);
+    transform: translateX(-100px); }
+  to { opacity: 1.0;
+    -webkit-transform: translateX(0);
+    -khtml-transform: translateX(0);
+    transform: translateX(0); } }
+
+/*-------------------------------------------------------------------
+    tb preloader
+-------------------------------------------------------------------*/
+#tb-preloader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999999;
+    display: block;
+    background: #fff;
+}
+.tb-preloader-wave {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+}
+.tb-preloader-wave:before,
+.tb-preloader-wave:after {
+    position: absolute;
+    display: inline-block;
+    content: "";
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #222;
+    -webkit-animation: preloader-wave 1.6s linear infinite;
+    animation: preloader-wave 1.6s linear infinite;
+}
+.tb-preloader-wave:after {
+    animation-delay: -0.8s;
+    -webkit-animation-delay: -0.8s;
+}
+@keyframes preloader-wave {
+    0% {
+        -webkit-transform: scale(0, 0);
+        transform: scale(0, 0);
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+    }
+    100% {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+}
+@-webkit-keyframes preloader-wave {
+    0% {
+        -webkit-transform: scale(0, 0);
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+    }
+    100% {
+        -webkit-transform: scale(1, 1);
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #000;
+    line-height: 0;
+}
+
+main {
+    position: relative;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+section.full-viewport-panel {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+#videobanner {
+    width: 100%;
+    height: auto;
+    margin-top: -50px;
+}
+
+section.program {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+section.program hr.line {
+    border-top: 2px solid #fff;
+    margin: 0 40px;
+    padding: 0;
+}
+
+section.program .item_wrapper {
+    margin-top: 60px;
+}
+
+section.program .item {
+    padding: 0 40px 20px 40px;
+    color: #fff;
+    line-height: 1;
+}
+
+section.program .item h1 {
+    display: inline-block;
+    vertical-align: top;
+    font-family: "ProgramTime";
+    font-size: 24px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-right: 30px;
+}
+
+section.program .item h2 {
+    display: inline-block;
+    font-family: "Roboto";
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 400;
+    letter-spacing: 0;
+
+}
+
+section.program .item h2 span {
+    color: #e9a762;
+    display: block;
+    padding-top: 15px; 
+}
+
+section.address {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+section.address hr.line {
+    border-top: 2px solid #fff;
+    margin: 0 40px;
+    padding: 0;
+}
+
+section.address .address_text {
+    padding: 0 40px;
+}
+
+section.address p {
+    font-family: "Roboto";
+    font-size: 16px;
+    color: #fff;
+    line-height: 1;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+section.address p.colored {
+    color: #e9a762;    
+}
+
+section.program.revealed .item h1 {
+    -webkit-animation-name: slidein-from-left;
+    animation-name: slidein-from-left;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+section.program.revealed .item h2 {
+    -webkit-animation-name: slidein-from-left;
+    animation-name: slidein-from-left;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@media (max-width: 378px) {
+    section.program .item h1 {
+        font-size: 20px;    
+    }
+
+    section.program .item h2 {
+        font-size: 14px;
+    }
+
+    section.address p {
+        font-size: 14px;
+    }
+}
